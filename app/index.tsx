@@ -4,7 +4,7 @@ import "./global.css";
 
 const index = () => {
   return (
-    <View className="bg-slate-900/40 text-white">
+    <View className="bg-slate-900/40 text-white h-screen w-screen">
       <Text>index</Text>
     </View>
   );
