@@ -1,15 +1,12 @@
-import { StyleSheet, Text, View } from "react-native";
 import React from "react";
-import "./global.css";
+import { Text, View } from "react-native";
 
-const index = () => {
+const Index = () => {
   return (
-    <View className="bg-slate-900/40 text-white h-screen w-screen">
-      <Text>index</Text>
+    <View className="flex-1 justify-center items-center bg-slate-900">
+      <Text className="text-white text-2xl">Hello NativeWind!</Text>
     </View>
   );
 };
 
-export default index;
-
-const styles = StyleSheet.create({});
+export default Index;
