@@ -1,0 +1,31 @@
+/* This file adds the requisite utility classes for Tailwind to work. */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import Poppins font variations */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+/* Theme Extension */
+:root {
+  /* Colors */
+  --color-primary: #161622;
+  --color-secondary: #ff9c01;
+  --color-secondary-100: #ff9001;
+  --color-secondary-200: #ff8e01;
+  --color-black: #000;
+  --color-black-100: #1e1e2d;
+  --color-black-200: #232533;
+  --color-gray-100: #cdcde0;
+
+  /* Fonts */
+  --font-pthin: "Poppins-Thin", sans-serif;
+  --font-pextralight: "Poppins-ExtraLight", sans-serif;
+  --font-plight: "Poppins-Light", sans-serif;
+  --font-pregular: "Poppins-Regular", sans-serif;
+  --font-pmedium: "Poppins-Medium", sans-serif;
+  --font-psemibold: "Poppins-SemiBold", sans-serif;
+  --font-pbold: "Poppins-Bold", sans-serif;
+  --font-pextrabold: "Poppins-ExtraBold", sans-serif;
+  --font-pblack: "Poppins-Black", sans-serif;
+}
