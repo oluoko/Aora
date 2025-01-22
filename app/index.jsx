@@ -6,10 +6,10 @@ import { Link } from "expo-router";
 export default function Index() {
   return (
     <View className="flex-1 justify-center items-center bg-white">
-      <Text className="text-3xl font-pblack">Aora!</Text>
+      <Text className="text-3xl font-black">Aora!</Text>
       <StatusBar style="auto" />
-      <Link href="/profile" className="text-blue-400">
-        Go To Profile
+      <Link href="/home" className="text-blue-400">
+        Go To Home
       </Link>
     </View>
   );
