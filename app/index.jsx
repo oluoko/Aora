@@ -1,5 +1,6 @@
 import { Image, ScrollView, View, Text } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import CustomButton from "../components/CustomButton";
 
 import { images } from "../constants";
 
@@ -35,6 +36,12 @@ export default function Index() {
             Where creativity meets innovation: embark on a journey of limitless
             exploration with Aora.
           </Text>
+          <CustomButton
+            title="Continue with Email"
+            handlePress={() => {}}
+            containerStyles="w-full mt-7"
+            textStyles="text-xl"
+          />
         </View>
       </ScrollView>
     </SafeAreaView>
