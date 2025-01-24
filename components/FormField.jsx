@@ -23,22 +23,29 @@ const FormField = ({
           backgroundColor: "#1a1a1f",
           borderRadius: 13,
           height: 50,
-          flex: 1,
-          justifyContent: "center",
+          display: "flex",
           flexDirection: "row",
+          justifyContent: "space-between",
+          alignItems: "center",
+          padding: 3,
         }}
       >
         <TextInput
-          className="flex-1 text-white font-black text-base "
+          className=" text-white font-black text-xl h-full w-full]"
           value={value}
           placeholder={placeholder}
           placeholderTextColor="#7b7b8b"
           onChangeText={handleChangeText}
           secureTextEntry={title === "Password" && !showPassword}
+          underlineColorAndroid="transparent"
+          style={{ outlineStyle: "none" }}
         />
         {title === "Password" && (
           <TouchableOpacity onPress={() => setShowPassword(!showPassword)}>
-            <Image source={!showPassword ? icons.eye : icons.eyehide} />
+            <Image
+              source={!showPassword ? icons.eye : icons.eyeHide}
+              style={{ width: 35, height: 35 }}
+            />
           </TouchableOpacity>
         )}
       </View>
