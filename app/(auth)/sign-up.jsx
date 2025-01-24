@@ -7,6 +7,8 @@ import CustomButton from "../../components/CustomButton";
 import { Link } from "expo-router";
 
 import { useState } from "react";
+import { createUser } from "../../lib/appwrite";
+
 const SignUp = () => {
   const [form, setForm] = useState({
     username: "",
@@ -14,7 +16,9 @@ const SignUp = () => {
     password: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const submit = () => {};
+  const submit = () => {
+    createUser();
+  };
   return (
     <SafeAreaView className="h-full bg-[#161622]">
       <ScrollView>
