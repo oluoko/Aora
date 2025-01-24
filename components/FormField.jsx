@@ -31,7 +31,7 @@ const FormField = ({
         }}
       >
         <TextInput
-          className=" text-white font-black text-xl h-full w-full]"
+          className=" text-white font-black text-lg h-full w-full]"
           value={value}
           placeholder={placeholder}
           placeholderTextColor="#7b7b8b"

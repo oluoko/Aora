@@ -1,10 +1,10 @@
-import { ScrollView, View, Image, Text } from "react-native";
+import { ScrollView, View, Image, Text, Alert } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 import { images } from "../../constants";
 import FormField from "../../components/FormField";
 import CustomButton from "../../components/CustomButton";
-import { Link } from "expo-router";
+import { Link, router } from "expo-router";
 
 import { useState } from "react";
 import { createUser } from "../../lib/appwrite";
@@ -16,8 +16,43 @@ const SignUp = () => {
     password: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const submit = () => {
-    createUser();
+  const submit = async () => {
+    if (!form.username || !form.email || !form.password) {
+      Alert.alert(
+        "Error",
+        "All fields are required. Please fill in all fields"
+      );
+    }
+    // if (!form.username) {
+    //   Alert.alert(
+    //     "Error",
+    //     "Username is required. Please fill in all the fields"
+    //   );
+    // } else if (!form.email) {
+    //   Alert.alert("Error", "Email is required. Please fill in all the fields");
+    // } else if (!form.password) {
+    //   Alert.alert(
+    //     "Error",
+    //     "Password is required. Please fill in all the fields"
+    //   );
+    // } else if (!form.email && !form.password && !form.username) {
+    //   Alert.alert(
+    //     "Error",
+    //     "All fields are required. Please fill in all fields"
+    //   );
+    // }
+
+    setIsSubmitting(true);
+
+    try {
+      const result = await createUser(form.email, form.password, form.username);
+      // set it to global state...
+      router.replace("/home");
+    } catch (error) {
+      Alert.alert("Error", error.message);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
   return (
     <SafeAreaView className="h-full bg-[#161622]">
