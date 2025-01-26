@@ -1,6 +1,6 @@
 import { ScrollView, View, Image, Text, Alert } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-
+import { useNavigation } from "@react-navigation/native";
 import { images } from "../../constants";
 import FormField from "../../components/FormField";
 import CustomButton from "../../components/CustomButton";
@@ -16,6 +16,7 @@ const SignUp = () => {
     password: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const navigation = useNavigation();
   const submit = async () => {
     if (!form.username || !form.email || !form.password) {
       Alert.alert(
@@ -47,6 +48,7 @@ const SignUp = () => {
     try {
       const result = await createUser(form.email, form.password, form.username);
       // set it to global state...
+      console.log("User Created Successfuly");
       router.replace("/home");
     } catch (error) {
       Alert.alert("Error", error.message);
